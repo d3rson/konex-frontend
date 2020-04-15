@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+//VARIÁVEIS
+@import './variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-weight: 400;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  background: $grey;
+  -webkit-font-smoothing: antialiased;
+}
+
+input, button, textarea {
+  font-weight: 400;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+form{
+
+  input{
+    width: 100%;
+    height: 50px;
+    color: $darkGrey;
+    border: 1px  solid #dcdce6;
+    border-radius: 8px;
+    padding: 0 24px;
+    margin-bottom: 10px;
+  }
+
+}
+
+.button {
+  width: 100%;
+  height: 60px;
+  background: $primary;
+  border: 0;
+  border-radius: 8px;
+  color: $branco;
+  font-weight: 700;
+  margin-top: 6px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  transition: filter 0.2s;
+
+  @media #{$mq-mobile} {
+    height: 50px;
+    line-height: 50px;
+    text-transform: uppercase;
+  }
+
+  &:hover{
+    filter: brightness(90%);
+  }
+}
+
+.back-link{
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  color: $preto;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+  @media #{$mq-mobile} {
+    font-size: 14px;
+    justify-content: center;
+  }
+
+  svg{
+    margin-right: 8px;
+  }
+
+  &:hover{
+    opacity: 0.8;
+  }
+}

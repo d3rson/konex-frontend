@@ -1,0 +1,266 @@
+@import "../../variables.scss";
+
+.contact-container {
+  width: 100%;
+  max-width: 1180px;
+  padding: 0 30px;
+  margin: 32px auto;
+
+  @media #{$mq-mobile} {
+    padding: 20px;
+    margin-top: 0;
+    height: auto;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+
+    @media #{$mq-mobile} {
+      width: 100%;
+      height: auto;
+    }
+    .wrap-header {
+      @media #{$mq-mobile} {
+        width: 100%;
+      }
+    }
+
+    .logoImage {
+      height: 64px;
+      @media #{$mq-mobile} {
+        height: 40px;
+      }
+    }
+
+    .welcome {
+      font-size: 20px;
+      margin-left: 24px;
+      @media #{$mq-mobile} {
+        display: none;
+      }
+    }
+
+    .button {
+      width: 260px;
+      margin-left: auto;
+      margin-top: 0;
+      border-radius: 4px;
+      .addMobile {
+        display: none;
+      }
+      @media #{$mq-mobile} {
+        width: 40px;
+        height: 40px;
+
+        .addMobile {
+          display: inline-block;
+        }
+        span {
+          display: none;
+        }
+      }
+    }
+
+    button {
+      height: 60px;
+      width: 60px;
+      border-radius: 4px;
+      border: 1px solid #dcdce6;
+      background: transparent;
+      margin-left: 16px;
+      transition: border-color 0.2s;
+
+      &:hover {
+        border-color: #00bfa6;
+      }
+
+      @media #{$mq-mobile} {
+        height: 40px;
+        width: 40px;
+      }
+    }
+  }
+
+  .info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 24px;
+
+    .titulo {
+      h1 {
+        color: #00bfa6;
+      }
+    }
+
+    form {
+      display: flex;
+      align-items: center;
+
+      input {
+        display: inline-block;
+        width: auto;
+        margin: 0;
+        background-image: url("../../assets/search.png");
+        background-repeat: no-repeat;
+        background-position: 95% center;
+      }
+      button {
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+        line-height: 60px;
+        display: none;
+      }
+    }
+
+    @media #{$mq-mobile} {
+      display: block;
+      margin-top: 30px;
+      .titulo {
+        margin-bottom: 10px;
+        h1 {
+          font-size: 18px;
+        }
+      }
+
+      form {
+        width: 100%;
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .filter-contacts {
+    padding-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    @media #{$mq-mobile} {
+      flex-wrap: wrap;
+      padding-bottom: 0;
+    }
+
+    button {
+      background: transparent;
+      padding: 5px 10px;
+      border: 0;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.3);
+      transition: all 0.2s;
+      span.mobile {
+        display: none;
+      }
+      span.desk {
+        display: inline;
+      }
+      @media #{$mq-mobile} {
+        span.mobile {
+          display: block;
+        }
+        span.desk {
+          display: none;
+        }
+      }
+
+      &:not(:first-of-type):hover {
+        color: #00bfa6;
+        transform: scale(1.2);
+      }
+      &:first-of-type:hover {
+        color: #00bfa6;
+      }
+    }
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 24px;
+    list-style: none;
+    @media #{$mq-mobile} {
+      grid-template-columns: 1fr;
+    }
+
+    li {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      position: relative;
+      transition: box-shadow 0.2s;
+
+      &:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .btdetalhe {
+          color: #00bfa6;
+        }
+      }
+
+      .btdelete {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+
+        button {
+          border: 0;
+          background-color: transparent;
+          color: #a8a8b3;
+          transition: color 0.2s;
+          &:hover {
+            color: #cc0000;
+          }
+        }
+      }
+      .contact-name {
+        font-size: 20px;
+        margin-bottom: 15px;
+        display: block;
+        text-transform: uppercase;
+        span {
+          font-weight: bold;
+        }
+      }
+      .contact-phone {
+        font-size: 14px;
+        font-weight: 400;
+        color: #333;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        svg {
+          margin-right: 10px;
+        }
+      }
+      .contact-email {
+        font-size: 14px;
+        font-weight: 400;
+        color: rgba(0, 0, 0, 0.68);
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        svg {
+          margin-right: 10px;
+        }
+      }
+
+      .btdetalhe {
+        border: 0;
+        padding: 0 15px;
+        margin: 0 auto;
+        display: block;
+        background: transparent;
+        color: #a8a0b3;
+        font-size: 14px;
+        transition: all 0.2s;
+      }
+    }
+  }
+}

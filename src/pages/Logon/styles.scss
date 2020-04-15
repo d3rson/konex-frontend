@@ -1,0 +1,56 @@
+@import '../../variables.scss';
+
+.logon-container{
+  width: 100%;
+  max-width: 1120px;
+  height: 100vh;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media #{$mq-mobile} {
+    flex-direction: column;
+    max-width: 100%;
+    padding: 50px 20px;
+  }
+
+  .konexImage{
+    @media #{$mq-mobile} {
+      display: none;
+    }
+  }
+
+  section.form{
+    width: 100%;
+    max-width: 350px;
+    margin-right: 100px;
+    
+    @media #{$mq-mobile} {
+      max-width: 100%;
+      margin: 0;
+    }
+
+    img{
+      width: 100%;
+      height: auto;
+    }
+
+    form{
+      margin-top: 50px;
+
+      h1{
+        font-size: 32px;
+        margin-bottom: 32px;
+        font-weight: 700;
+        color: $preto;
+        @media #{$mq-mobile} {
+          font-size: 24px;
+          margin-bottom: 20px;
+          text-align: center;
+        }
+      }      
+    }
+  }
+}
