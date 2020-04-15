@@ -11,22 +11,14 @@ import EditContact from './pages/EditContact'
 
 export default function Routes(){
 
-  const loggedIn = !!localStorage.getItem('user')
-  
   return(
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Logon} />
         <Route path="/register" component={Register} />
-        <Route path="/contacts" exact>
-          {loggedIn ? <Contacts /> : <Redirect to="/"/>}
-        </Route>
-        <Route path="/contacts/new">
-          {loggedIn ? <NewContact /> : <Redirect to="/"/>}
-        </Route>
-        <Route path="/contacts/:id">
-          {loggedIn ? <EditContact /> : <Redirect to="/"/>}
-        </Route>
+        <Route path="/contacts" exact component={Contacts} />
+        <Route path="/contacts/new" component={NewContact} />
+        <Route path="/contacts/:id" component={EditContact} />
       </Switch>
     </BrowserRouter>
   )
