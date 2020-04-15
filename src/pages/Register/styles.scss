@@ -55,6 +55,11 @@
       h1{
         margin: 64px 0 32px;
         font-size: 32px;
+        
+        .back-link-mobile{
+          display: none;
+        }
+
         @media #{$mq-mobile} {
           margin-top: 30px;
           font-size: 24px;
